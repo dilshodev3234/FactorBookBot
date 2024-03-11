@@ -1,0 +1,77 @@
+# English translations for PROJECT.
+# Copyright (C) 2024 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2024-03-11 17:52+0500\n"
+"PO-Revision-Date: 2024-03-10 11:30+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.13.1\n"
+
+#: bot/buttons/inline.py:16
+msgid "Search 🔎"
+msgstr ""
+
+#: bot/buttons/reply.py:9
+msgid "Uzbek 🇺🇿"
+msgstr ""
+
+#: bot/buttons/reply.py:10
+msgid "Enlish 🇬🇧"
+msgstr ""
+
+#: bot/buttons/reply.py:17
+msgid "📚 Books"
+msgstr ""
+
+#: bot/buttons/reply.py:18
+msgid "📃 My Order"
+msgstr ""
+
+#: bot/buttons/reply.py:19
+msgid "🔵 We network"
+msgstr ""
+
+#: bot/buttons/reply.py:20
+msgid "📞 Contact us"
+msgstr ""
+
+#: bot/buttons/reply.py:21
+msgid "🇺🇿 🔁 🇬🇧 Lang"
+msgstr ""
+
+#: bot/handlers/start.py:23 bot/handlers/user/language.py:21
+#: bot/handlers/user/language.py:34
+msgid "Hello, {}!"
+msgstr ""
+
+#: bot/handlers/start.py:26 bot/handlers/user/language.py:27
+msgid "Choose language :"
+msgstr ""
+
+#: bot/handlers/user/books.py:15
+msgid "Select one of the categories"
+msgstr ""
+
+#~ msgid "📚 Kitoblar"
+#~ msgstr ""
+
+#~ msgid "📃 Mening buyurtmalarim"
+#~ msgstr ""
+
+#~ msgid "🔵 Biz ijtimoiy tarmoqlarda"
+#~ msgstr ""
+
+#~ msgid "📞 Biz bilan bog'lanish"
+#~ msgstr ""
+

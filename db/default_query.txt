@@ -1,0 +1,21 @@
+create index books_title_inx on books(title);
+create index orders_user_inx on orders(user_id);
+create index users_chat_id_inx on users(id);
+
+    create function save_delete_users()
+    returns trigger
+    language plpgsql
+    as
+        $$
+        begin
+            insert into delete_users(user_id, deleted_at)
+            values (OLD.id , current_timestamp);
+            return OLD;
+        end;
+        $$;
+
+
+create trigger user_delete_trigger
+before delete on users
+for each row
+execute function save_delete_users();
