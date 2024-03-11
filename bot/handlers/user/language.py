@@ -21,20 +21,18 @@ async def choose_lang_handler(msg: Message, state: FSMContext):
     await msg.answer(_("Hello, {}!").format(msg.from_user.full_name), reply_markup=main_menu_btn())
 
 
-@dp.message(F.text == __("🇺🇿 🔁 🇬🇧 Lang"),ButtonState.main)
+@dp.message(F.text == __("🇺🇿 🔁 🇬🇧 Lang"), ButtonState.main)
 async def choose_lang_handler(msg: Message, state: FSMContext):
     await state.set_state(ButtonState.choose_language)
     await msg.answer(text=_("Choose language :"), reply_markup=language_btn())
 
+
 @dp.message(ButtonState.choose_language)
-async def choose_lang_handler(msg: Message, state: FSMContext, i18n:I18n):
+async def choose_lang_handler(msg: Message, state: FSMContext, i18n: I18n):
     lang = "uz" if msg.text == __("Uzbek 🇺🇿") else 'en'
     await state.update_data({"locale": lang})
     i18n.current_locale = lang
-    await User.update(id_=msg.from_user.id, lang = LangEnum(lang).name)
+    await User.update(id_=msg.from_user.id, lang=LangEnum(lang).name)
     await state.set_state(ButtonState.main)
     await msg.answer(_("Hello, {}!").format(msg.from_user.full_name), reply_markup=main_menu_btn())
     print(123)
-
-
-

@@ -1,0 +1,8 @@
+https://github.com/nessshon/aiogram-starlette-template/tree/main
+
+
+users,products,category,cart,order
+
+admin(web),structure,i18n,sqlalchemy(alembic,asyncpg),payment
+
+@factor_book_bot

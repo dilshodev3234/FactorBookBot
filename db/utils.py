@@ -3,12 +3,16 @@ from datetime import datetime
 from sqlalchemy import delete as sqlalchemy_delete, Column, DateTime
 from sqlalchemy import update as sqlalchemy_update
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, AsyncAttrs
+from sqlalchemy.ext.declarative import declared_attr
 from sqlalchemy.future import select
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
 from db.config import Config
 
+
 class Base(AsyncAttrs, DeclarativeBase):
-    pass
+    @declared_attr
+    def __tablename__(self) -> str:
+        return self.__name__.lower() + 's'
 
 
 class AsyncDatabaseSession:
@@ -59,9 +63,9 @@ class AbstractClass:
     async def update(cls, id_, **kwargs):
         query = (
             sqlalchemy_update(cls)
-                .where(cls.id == id_)
-                .values(**kwargs)
-                .execution_options(synchronize_session="fetch")
+            .where(cls.id == id_)
+            .values(**kwargs)
+            .execution_options(synchronize_session="fetch")
         )
         await db.execute(query)
         await cls.commit()
@@ -92,9 +96,8 @@ class AbstractClass:
             result.append(i[0])
         return result
 
+
 class CreatedModel(Base, AbstractClass):
     __abstract__ = True
     created_at = Column(DateTime(), default=datetime.utcnow)
     updated_at = Column(DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow)
-
-

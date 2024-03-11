@@ -1,15 +1,15 @@
 import asyncio
 import logging
 import sys
-from aiogram import Bot
-from aiogram.enums import ParseMode
-from aiogram.utils.i18n import I18n, FSMI18nMiddleware
 
-from bot.dispatcher import TOKEN, dp
+from aiogram import Bot
+from aiogram.utils.i18n import FSMI18nMiddleware
+
+from bot.dispatcher import TOKEN
 from bot.handlers import *
 from db import db
 
-i18n = I18n(path="locales")
+i18n = I18n(path='locales')
 
 
 async def main() -> None:

@@ -6,8 +6,6 @@ class LangEnum(Enum):
     UZ = "uz"
 
 
-print(LangEnum['EN'].value)
-
 class MoneyEnum(Enum):
     DOLLAR = "$"
     CENT = "¢"
