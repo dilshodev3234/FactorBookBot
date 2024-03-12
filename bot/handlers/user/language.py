@@ -6,7 +6,7 @@ from aiogram.utils.i18n import lazy_gettext as __
 from bot.buttons.reply import main_menu_btn, language_btn
 from bot.dispatcher import dp
 from bot.states.main import UserState, ButtonState
-from config.enums.main import LangEnum
+from db.enums.main import LangEnum
 from db import User
 
 
@@ -35,4 +35,3 @@ async def choose_lang_handler(msg: Message, state: FSMContext, i18n: I18n):
     await User.update(id_=msg.from_user.id, lang=LangEnum(lang).name)
     await state.set_state(ButtonState.main)
     await msg.answer(_("Hello, {}!").format(msg.from_user.full_name), reply_markup=main_menu_btn())
-    print(123)

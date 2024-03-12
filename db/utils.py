@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, AsyncAttrs
 from sqlalchemy.ext.declarative import declared_attr
 from sqlalchemy.future import select
 from sqlalchemy.orm import sessionmaker, DeclarativeBase
-from db.config import Config
+from config import conf
 
 
 class Base(AsyncAttrs, DeclarativeBase):
@@ -25,11 +25,10 @@ class AsyncDatabaseSession:
 
     def init(self):
         self._engine = create_async_engine(
-            Config.DB_CONFIG,
+            conf.db.db_url,
             future=True,
             echo=False,
             isolation_level="AUTOCOMMIT"
-
         )
         self._session = sessionmaker(self._engine, expire_on_commit=False, class_=AsyncSession)()
 

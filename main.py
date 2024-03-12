@@ -5,16 +5,15 @@ import sys
 from aiogram import Bot
 from aiogram.utils.i18n import FSMI18nMiddleware
 
-from bot.dispatcher import TOKEN
 from bot.handlers import *
 from db import db
-
+from config import conf
 i18n = I18n(path='locales')
 
 
 async def main() -> None:
     await db.create_all()
-    bot = Bot(TOKEN)
+    bot = Bot(conf.bot.BOT_TOKEN)
     dp.update.middleware(FSMI18nMiddleware(i18n))
     await dp.start_polling(bot)
 

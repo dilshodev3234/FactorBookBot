@@ -1,5 +1,4 @@
 from aiogram.fsm.context import FSMContext
-from aiogram.fsm.state import StatesGroup, State
 from aiogram.types import Message, InlineQuery, InlineQueryResultArticle, InputTextMessageContent
 from aiogram.utils.i18n import gettext as _
 from aiogram.utils.i18n import lazy_gettext as __
@@ -8,13 +7,12 @@ from bot.buttons.reply import language_btn, main_menu_btn
 from bot.dispatcher import dp
 from bot.filters.main import Command
 from bot.states.main import ButtonState, UserState
-from config.enums.main import LangEnum
 from db import User, Book
+from db.enums.main import LangEnum
 
 
 @dp.message(Command("start"))
 async def command_start_handler(message: Message, state: FSMContext) -> None:
-
     user: User = await User.get(id_=message.from_user.id)
     if user:
         await state.set_state(ButtonState.main)
