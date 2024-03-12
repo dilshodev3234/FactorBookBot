@@ -17,7 +17,8 @@ cmake-build-*/
 .idea
 .idea/**/mongoSettings.xml
 *.iws
-.env
+.env/.env.local
+.env/.env.prod
 out/
 .idea_modules/
 atlassian-ide-plugin.xml
@@ -38,5 +39,4 @@ fabric.properties
 pyvenv.cfg
 .venv
 pip-selfcheck.json
-.env
 venv/
