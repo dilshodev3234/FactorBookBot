@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-11 17:52+0500\n"
+"POT-Creation-Date: 2024-03-12 22:51+0500\n"
 "PO-Revision-Date: 2024-03-10 11:30+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -22,6 +22,14 @@ msgstr ""
 msgid "Search 🔎"
 msgstr ""
 
+#: bot/buttons/inline.py:18 bot/buttons/inline.py:31
+msgid "🛒 Cart ({0})"
+msgstr ""
+
+#: bot/buttons/inline.py:32 bot/buttons/inline.py:43
+msgid "◀ Back"
+msgstr ""
+
 #: bot/buttons/reply.py:9
 msgid "Uzbek 🇺🇿"
 msgstr ""
@@ -30,36 +38,61 @@ msgstr ""
 msgid "Enlish 🇬🇧"
 msgstr ""
 
-#: bot/buttons/reply.py:17
+#: bot/buttons/reply.py:18
 msgid "📚 Books"
 msgstr ""
 
-#: bot/buttons/reply.py:18
+#: bot/buttons/reply.py:19
 msgid "📃 My Order"
 msgstr ""
 
-#: bot/buttons/reply.py:19
+#: bot/buttons/reply.py:20
 msgid "🔵 We network"
 msgstr ""
 
-#: bot/buttons/reply.py:20
+#: bot/buttons/reply.py:21
 msgid "📞 Contact us"
 msgstr ""
 
-#: bot/buttons/reply.py:21
+#: bot/buttons/reply.py:22
 msgid "🇺🇿 🔁 🇬🇧 Lang"
 msgstr ""
 
-#: bot/handlers/start.py:23 bot/handlers/user/language.py:21
-#: bot/handlers/user/language.py:34
+#: bot/handlers/start.py:19 bot/handlers/user/language.py:21
+#: bot/handlers/user/language.py:37
 msgid "Hello, {}!"
 msgstr ""
 
-#: bot/handlers/start.py:26 bot/handlers/user/language.py:27
+#: bot/handlers/start.py:22 bot/handlers/user/language.py:27
 msgid "Choose language :"
 msgstr ""
 
 #: bot/handlers/user/books.py:15
+msgid "🔹 Title"
+msgstr ""
+
+#: bot/handlers/user/books.py:16
+msgid "Category"
+msgstr ""
+
+#: bot/handlers/user/books.py:17
+msgid "Description"
+msgstr ""
+
+#: bot/handlers/user/books.py:18
+msgid "Page"
+msgstr ""
+
+#: bot/handlers/user/books.py:19
+msgid "Vol"
+msgstr ""
+
+#: bot/handlers/user/books.py:20
+msgid "Price"
+msgstr ""
+
+#: bot/handlers/user/books.py:31 bot/handlers/user/books.py:77
+#: bot/handlers/user/books.py:88
 msgid "Select one of the categories"
 msgstr ""
 
