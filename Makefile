@@ -18,6 +18,6 @@ generate:
 	alembic revision --autogenerate -m "Added account table"
 
 admin:
-	uvicorn admin:app --host=0.0.0.0 --port=8080
+	uvicorn admin:app --host=0.0.0.0 --port=8081
 
 #10.10.1.241:8080/admin

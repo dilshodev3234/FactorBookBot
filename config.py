@@ -3,7 +3,7 @@ from dataclasses import dataclass, asdict
 
 from dotenv import load_dotenv
 
-load_dotenv('.env/.env.local')
+load_dotenv('.env/.env.tmp')
 
 
 @dataclass
@@ -33,7 +33,7 @@ class BotConfig(BaseConfig):
     BOT_TOKEN: str = os.getenv('BOT_TOKEN')
 
     WEB_SERVER_HOST: str = "127.0.0.1"
-    WEB_SERVER_PORT: int = 8080
+    WEB_SERVER_PORT: int = 8081
     MAIN_BOT_PATH: str = "/webhook/main"
     OTHER_BOTS_PATH: str = "/webhook/bot/{bot_token}"
 
