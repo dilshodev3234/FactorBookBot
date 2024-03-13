@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-11 17:52+0500\n"
+"POT-Creation-Date: 2024-03-12 22:51+0500\n"
 "PO-Revision-Date: 2024-03-10 11:30+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uz\n"
@@ -22,6 +22,14 @@ msgstr ""
 msgid "Search 🔎"
 msgstr "Qidirish 🔎"
 
+#: bot/buttons/inline.py:18 bot/buttons/inline.py:31
+msgid "🛒 Cart ({0})"
+msgstr "🛒 Savat ({0})"
+
+#: bot/buttons/inline.py:32 bot/buttons/inline.py:43
+msgid "◀ Back"
+msgstr "◀ Ortga"
+
 #: bot/buttons/reply.py:9
 msgid "Uzbek 🇺🇿"
 msgstr "O'zbek tili 🇺🇿"
@@ -30,48 +38,63 @@ msgstr "O'zbek tili 🇺🇿"
 msgid "Enlish 🇬🇧"
 msgstr "Eng Tili 🇬🇧"
 
-#: bot/buttons/reply.py:17
+#: bot/buttons/reply.py:18
 msgid "📚 Books"
 msgstr "📚 Kitoblar"
 
-#: bot/buttons/reply.py:18
+#: bot/buttons/reply.py:19
 msgid "📃 My Order"
 msgstr "📃 Mening Buyurtmalarim"
 
-#: bot/buttons/reply.py:19
+#: bot/buttons/reply.py:20
 msgid "🔵 We network"
 msgstr "🔵 Bizning Ijtimoiy Tarmoq"
 
-#: bot/buttons/reply.py:20
+#: bot/buttons/reply.py:21
 msgid "📞 Contact us"
 msgstr "📞 Biz Bilan Bog'lanish"
 
-#: bot/buttons/reply.py:21
+#: bot/buttons/reply.py:22
 msgid "🇺🇿 🔁 🇬🇧 Lang"
 msgstr "🇺🇿 🔁 🇬🇧 Til"
 
-#: bot/handlers/start.py:23 bot/handlers/user/language.py:21
-#: bot/handlers/user/language.py:34
+#: bot/handlers/start.py:19 bot/handlers/user/language.py:21
+#: bot/handlers/user/language.py:37
 msgid "Hello, {}!"
 msgstr "Salom , {}!"
 
-#: bot/handlers/start.py:26 bot/handlers/user/language.py:27
+#: bot/handlers/start.py:22 bot/handlers/user/language.py:27
 msgid "Choose language :"
 msgstr "Tilni tanlang"
 
 #: bot/handlers/user/books.py:15
+msgid "🔹 Title"
+msgstr "🔹 Nomi"
+
+#: bot/handlers/user/books.py:16
+msgid "Category"
+msgstr "Janr"
+
+#: bot/handlers/user/books.py:17
+msgid "Description"
+msgstr "Qisqacha malumot"
+
+#: bot/handlers/user/books.py:18
+msgid "Page"
+msgstr "Bet"
+
+#: bot/handlers/user/books.py:19
+msgid "Vol"
+msgstr "Muqova"
+
+#: bot/handlers/user/books.py:20
+msgid "Price"
+msgstr "Narxi"
+
+#: bot/handlers/user/books.py:31 bot/handlers/user/books.py:77
+#: bot/handlers/user/books.py:88
 msgid "Select one of the categories"
 msgstr "Toifalardan birini tanlang"
 
-#~ msgid "📚 Kitoblar"
-#~ msgstr "📚 Books"
 
-#~ msgid "📃 Mening buyurtmalarim"
-#~ msgstr "📃 My Order"
-
-#~ msgid "🔵 Biz ijtimoiy tarmoqlarda"
-#~ msgstr "🔵 We network"
-
-#~ msgid "📞 Biz bilan bog'lanish"
-#~ msgstr "📞 Contact us"
 
