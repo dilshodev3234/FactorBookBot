@@ -50,11 +50,20 @@ class RedisConfig(BaseConfig):
 
 
 @dataclass
+class WebConfig(BaseConfig):
+    """Web configuration"""
+    SECRET_KEY: str = os.getenv('SECRET_KEY')
+    USERNAME: str = os.getenv('ADMIN_USERNAME')
+    PASSWD: str = os.getenv('ADMIN_PASSWORD')
+
+
+@dataclass
 class Configuration:
     """All in one configuration's class"""
     rd = RedisConfig()
     db = DatabaseConfig()
     bot = BotConfig()
+    web = WebConfig()
 
 
 conf = Configuration()
