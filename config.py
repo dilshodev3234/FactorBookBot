@@ -3,7 +3,7 @@ from dataclasses import dataclass, asdict
 
 from dotenv import load_dotenv
 
-load_dotenv('.env/.env.local')
+load_dotenv('.env/.env.tmp')
 
 
 @dataclass
