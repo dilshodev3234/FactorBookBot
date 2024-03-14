@@ -3,7 +3,7 @@ from dataclasses import dataclass, asdict
 
 from dotenv import load_dotenv
 
-load_dotenv('.env/.env.local')
+load_dotenv('../.env/.env.local')
 
 
 @dataclass
@@ -31,6 +31,7 @@ class BotConfig(BaseConfig):
     """Bot configuration"""
     BASE_URL: str = os.getenv('BASE_URL')
     BOT_TOKEN: str = os.getenv('BOT_TOKEN')
+    PAYMENT_CLICK_TOKEN: str = os.getenv('PAYMENT_CLICK_TOKEN')
 
     WEB_SERVER_HOST: str = "127.0.0.1"
     WEB_SERVER_PORT: int = 8080

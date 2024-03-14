@@ -11,9 +11,9 @@ class ButtonState(StatesGroup):
     choose_language = State()
 
 
-
 class OrderState(StatesGroup):
     category = State()
     order_cart = State()
     book = State()
     order = State()
+    phone = State()

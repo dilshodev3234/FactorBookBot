@@ -6,10 +6,10 @@ from db import User
 
 
 class Command(Filter):
-    def __init__(self, my_text: str, prefix= '/') -> None:
+    def __init__(self, my_text: str, prefix='/') -> None:
         self.my_text = f"{prefix}{my_text}"
 
-    async def __call__(self, message: Message, state:FSMContext) -> bool:
+    async def __call__(self, message: Message, state: FSMContext) -> bool:
         user: User = await User.get(id_=message.from_user.id)
         await state.clear()
         if user:

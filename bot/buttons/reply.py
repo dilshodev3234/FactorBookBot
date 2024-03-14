@@ -12,14 +12,22 @@ def language_btn():
     return rkm.as_markup(resize_keyboard=True)
 
 
+def phone_btn():
+    rkm = ReplyKeyboardBuilder()
+    rkm.add(*[
+        KeyboardButton(text=_("Telefon raqam"), request_contact=True)
+    ])
+    return rkm.as_markup(resize_keyboard=True)
+
+
 def main_menu_btn():
-        rkm = ReplyKeyboardBuilder()
-        rkm.add(*[
-            KeyboardButton(text=_("📚 Books")),
-            KeyboardButton(text=_("📃 My Order")),
-            KeyboardButton(text=_("🔵 We network")),
-            KeyboardButton(text=_("📞 Contact us")),
-            KeyboardButton(text=_("🇺🇿 🔁 🇬🇧 Lang"))
-        ])
-        rkm.adjust(1, 1, 2)
-        return rkm.as_markup(resize_keyboard=True)
+    rkm = ReplyKeyboardBuilder()
+    rkm.add(*[
+        KeyboardButton(text=_("📚 Books")),
+        KeyboardButton(text=_("📃 My Order")),
+        KeyboardButton(text=_("🔵 We network")),
+        KeyboardButton(text=_("📞 Contact us")),
+        KeyboardButton(text=_("🇺🇿 🔁 🇬🇧 Lang"))
+    ])
+    rkm.adjust(1, 1, 2)
+    return rkm.as_markup(resize_keyboard=True)

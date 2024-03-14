@@ -1,19 +1,19 @@
 from typing import Optional
 
-from aiogram import F
+from aiogram import F, Router
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, CallbackQuery
 from aiogram.utils.i18n import gettext as _
 from aiogram.utils.i18n import lazy_gettext as __
 
 from bot.buttons.inline import categories_inline_btn, books_inline_btn, order_inline_btn
-from bot.dispatcher import dp
-from bot.states.main import ButtonState, OrderState
-from db.enums.main import OrderStatusEnum
-from db.models.models import Order, OrderItem, Category, Book
+from bot.states.main import OrderState
+from db import Order, OrderItem, Category, Book
+
+book_router = Router()
 
 
-@dp.message(F.text == __("📚 Books"))
+@book_router.message(F.text == __("📚 Books"))
 async def main_handler(msg: Message, state: FSMContext):
     order: Optional[Order] = await Order().get(user_id=msg.from_user.id)
     order_items = []
@@ -25,7 +25,7 @@ async def main_handler(msg: Message, state: FSMContext):
     await msg.answer(_("Select one of the categories"), reply_markup=ikm)
 
 
-@dp.callback_query(F.data == "cart", OrderState.category)
+@book_router.callback_query(F.data == "cart", OrderState.category)
 async def category_handler(call: CallbackQuery, state: FSMContext):
     data = await state.get_data()
     order_id = data.get("order_id")
@@ -45,7 +45,7 @@ async def category_handler(call: CallbackQuery, state: FSMContext):
     await call.message.answer(text, reply_markup=ikm)
 
 
-@dp.callback_query(F.data == "❌", OrderState.order_cart)
+@book_router.callback_query(F.data == "❌", OrderState.order_cart)
 async def order_cart_handler(call: CallbackQuery, state: FSMContext):
     data = await state.get_data()
     await Order.delete(data.get("order_id"))
@@ -55,16 +55,17 @@ async def order_cart_handler(call: CallbackQuery, state: FSMContext):
     await call.message.answer(text=_("Success clear"), reply_markup=ikm)
 
 
-@dp.callback_query(F.data == "✅", OrderState.order_cart)
+@book_router.callback_query(F.data == "✅", OrderState.order_cart)
 async def order_cart_handler(call: CallbackQuery, state: FSMContext):
     data = await state.get_data()
-    await Order.update(data.get("order_id"), status= OrderStatusEnum.APPROVED.name)
+    await Order.update(data.get("order_id"), status=Order.OrderStatusEnum.APPROVED)
     ikm = await categories_inline_btn()
     await call.message.delete()
     await state.set_state(OrderState.category)
     await call.message.answer(text=_("Success order"), reply_markup=ikm)
 
-@dp.callback_query(F.data == "back", OrderState.order_cart)
+
+@book_router.callback_query(F.data == "back", OrderState.order_cart)
 async def order_cart_handler(call: CallbackQuery, state: FSMContext):
     order: Optional[Order] = await Order().get(user_id=call.from_user.id)
     order_items = []
@@ -77,7 +78,7 @@ async def order_cart_handler(call: CallbackQuery, state: FSMContext):
     await call.message.answer(_("Select one of the categories"), reply_markup=ikm)
 
 
-@dp.callback_query(OrderState.category)
+@book_router.callback_query(OrderState.category)
 async def category_handler(call: CallbackQuery, state: FSMContext):
     data = await state.get_data()
     category: Category = await Category().get(id_=int(call.data))

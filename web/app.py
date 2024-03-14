@@ -1,9 +1,10 @@
+import uvicorn
 from starlette.applications import Starlette
 from starlette.middleware import Middleware
 from starlette_admin.contrib.sqla import Admin, ModelView
 
-from db import db
-from db.models import User, Category, Book, Order
+from db import db, OrderItem
+from db.models.models import User, Category, Book, Order
 from web.provider import UsernameAndPasswordProvider
 from starlette.middleware.sessions import SessionMiddleware
 from config import conf
@@ -27,6 +28,11 @@ admin.add_view(ModelView(User))
 admin.add_view(ModelView(Category))
 admin.add_view(ModelView(Book))
 admin.add_view(ModelView(Order))
+admin.add_view(ModelView(OrderItem))
 
 # Mount admin to your app
 admin.mount_to(app)
+
+
+if __name__ == '__main__':
+    uvicorn.run(app, host='0.0.0.0', port=8080)

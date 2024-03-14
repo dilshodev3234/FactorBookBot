@@ -72,11 +72,7 @@ class AbstractClass:
     @classmethod
     async def get(cls, id_):
         query = select(cls).where(cls.id == id_)
-        objects = await db.execute(query)
-        object_ = objects.first()
-        if object_:
-            return object_[0]
-
+        return (await db.execute(query)).scalar()
 
     @classmethod
     async def delete(cls, id_):
@@ -87,12 +83,7 @@ class AbstractClass:
 
     @classmethod
     async def get_all(cls):
-        query = select(cls)
-        objects = await db.execute(query)
-        result = []
-        for i in objects.all():
-            result.append(i[0])
-        return result
+        return (await db.execute(select(cls))).scalars()
 
 
 class CreatedModel(Base, AbstractClass):

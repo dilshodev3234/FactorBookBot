@@ -3,32 +3,12 @@ https://github.com/nessshon/aiogram-starlette-template/tree/main
 
 users,products,category,cart,order
 
-admin(web),structure,i18n,sqlalchemy(asyncpg),payment,alembic
+1. admin(web) ✅
+1.1 product rasmini chiqarish
+1.2 telegram userga xabar yuborish
+
+structure,i18n,sqlalchemy(asyncpg),payment,alembic
 
 @factor_book_bot
 
 @python_groups_bot
-
-TEST, LIVE
-
-
-1)
-/help
-/start
-
-
-2)
-biz ijtimoiy tarmoqlarda
-biz bilan bog'lanish
-
-
-3)
-models
-
-
-4)
-category ni bosganda kitoblar listini chiqarish
-
-
-
-5) savatga qoshish
