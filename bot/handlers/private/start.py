@@ -44,7 +44,7 @@ async def command_start_handler(msg: Message) -> None:
     user: Optional[User] = await User.get(id_=msg.from_user.id)
     if user is None:
         user = {"id": msg.from_user.id, "username": msg.from_user.username,
-                "full_name": f"{msg.from_user.full_name}", "lang": User.LangEnum(msg.from_user.language_code).name}
+                "full_name": f"{msg.from_user.full_name}", "lang": User.LangEnum(msg.from_user.language_code)}
         await User.create(**user)
 
     await msg.answer(_("Hello, {}!").format(msg.from_user.full_name), reply_markup=main_menu_btn())

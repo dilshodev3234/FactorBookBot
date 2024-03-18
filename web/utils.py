@@ -1,10 +1,15 @@
-import bcrypt
+from typing import Any, List, Dict, Union
 
-def hash_password(password):
-   password_bytes = password.encode('utf-8')
-   hashed_bytes = bcrypt.hashpw(password_bytes, bcrypt.gensalt())
-   return hashed_bytes.decode('utf-8')
+from sqlalchemy.engine import Dialect
+from sqlalchemy_file import ImageField
 
-s = '$2b$12$FP0EeppGwH/dQ32LH5Z58.4eDnbef.pNSZBf1JJV4XirKzZtZR5/O'
 
-print(bcrypt.checkpw('1'.encode(), s.encode()))
+class CustomImageField(ImageField):
+
+    def process_bind_param(self, value: Any, dialect: Dialect) -> Union[None, Dict[str, Any], List[Dict[str, Any]]]:
+        # TODO haqiqiy https://telegra.ph/api ga yuklab linkini
+        data = {
+            'telegram_file_id': 'telegra dagi linki'
+        }
+        value.update(data)
+        return super().process_bind_param(value, dialect)

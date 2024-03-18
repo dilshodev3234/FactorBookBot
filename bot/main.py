@@ -14,6 +14,7 @@ from db import database
 
 redis = Redis(db=conf.rd.DB, host=conf.rd.HOST, port=conf.rd.PORT)
 dp = Dispatcher(storage=RedisStorage(redis))
+bot = Bot(conf.bot.BOT_TOKEN)
 
 i18n = I18n(path='../locales')
 
@@ -33,7 +34,6 @@ async def main() -> None:
     await register_all_handlers()
     await register_all_middlewares()
 
-    bot = Bot(conf.bot.BOT_TOKEN)
     await dp.start_polling(bot)
 
 
