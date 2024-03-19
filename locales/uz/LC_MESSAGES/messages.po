@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-03-14 00:11+0500\n"
-"PO-Revision-Date: 2024-03-14 00:11+0500\n"
+"POT-Creation-Date: 2024-03-11 17:52+0500\n"
+"PO-Revision-Date: 2024-03-10 11:30+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uz\n"
 "Language-Team: uz <LL@li.org>\n"
@@ -20,46 +20,58 @@ msgstr ""
 
 #: bot/buttons/inline.py:16
 msgid "Search 🔎"
-msgstr ""
+msgstr "Qidirish 🔎"
 
 #: bot/buttons/reply.py:9
 msgid "Uzbek 🇺🇿"
-msgstr ""
+msgstr "O'zbek tili 🇺🇿"
 
 #: bot/buttons/reply.py:10
 msgid "Enlish 🇬🇧"
-msgstr ""
+msgstr "Eng Tili 🇬🇧"
+
+#: bot/buttons/reply.py:17
+msgid "📚 Books"
+msgstr "📚 Kitoblar"
 
 #: bot/buttons/reply.py:18
-msgid "📚 Books"
-msgstr ""
+msgid "📃 My Order"
+msgstr "📃 Mening Buyurtmalarim"
 
 #: bot/buttons/reply.py:19
-msgid "📃 My Order"
-msgstr ""
+msgid "🔵 We network"
+msgstr "🔵 Bizning Ijtimoiy Tarmoq"
 
 #: bot/buttons/reply.py:20
-msgid "🔵 We network"
-msgstr ""
+msgid "📞 Contact us"
+msgstr "📞 Biz Bilan Bog'lanish"
 
 #: bot/buttons/reply.py:21
-msgid "📞 Contact us"
-msgstr ""
-
-#: bot/buttons/reply.py:22
 msgid "🇺🇿 🔁 🇬🇧 Lang"
-msgstr ""
+msgstr "🇺🇿 🔁 🇬🇧 Til"
 
-#: bot/handlers/start.py:19 bot/handlers/user/language.py:21
-#: bot/handlers/user/language.py:37
+#: bot/handlers/start.py:23 bot/handlers/user/language.py:21
+#: bot/handlers/user/language.py:34
 msgid "Hello, {}!"
-msgstr ""
+msgstr "Salom , {}!"
 
-#: bot/handlers/start.py:22 bot/handlers/user/language.py:27
+#: bot/handlers/start.py:26 bot/handlers/user/language.py:27
 msgid "Choose language :"
-msgstr ""
+msgstr "Tilni tanlang"
 
 #: bot/handlers/user/books.py:15
 msgid "Select one of the categories"
-msgstr ""
+msgstr "Toifalardan birini tanlang"
+
+#~ msgid "📚 Kitoblar"
+#~ msgstr "📚 Books"
+
+#~ msgid "📃 Mening buyurtmalarim"
+#~ msgstr "📃 My Order"
+
+#~ msgid "🔵 Biz ijtimoiy tarmoqlarda"
+#~ msgstr "🔵 We network"
+
+#~ msgid "📞 Biz bilan bog'lanish"
+#~ msgstr "📞 Contact us"
 
